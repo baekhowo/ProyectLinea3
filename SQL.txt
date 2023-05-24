@@ -1,0 +1,46 @@
+Create database testdb;
+use testdb;
+
+Create table Users(
+id int IDENTITY(1,1) PRIMARY KEY,
+username varchar(20) not null,
+password varchar(20) not null
+);
+
+Create table Alumnos(
+id int IDENTITY(1,1) PRIMARY KEY,
+nombreAlumno varchar(20) not null,
+apellidoAlumno varchar(20) not null,
+sexo varchar(10) not null,
+fechaNace date not null,
+alumnoActivo int not null
+);
+
+Create table Cursos(
+id int IDENTITY(1,1) PRIMARY KEY,
+nombreCurso varchar(20) not null,
+temario varchar(100) not null,
+);
+
+Create table Fichas(
+idFicha int IDENTITY(1,1) PRIMARY KEY,
+idAlumno int not null,
+idCurso int not null,
+CONSTRAINT fk_Alumno FOREIGN KEY (idAlumno) REFERENCES Alumnos (id),
+CONSTRAINT fk_Curso FOREIGN KEY (idCurso) REFERENCES Cursos (id),
+);
+
+insert into Alumnos(nombreAlumno,apellidoAlumno,sexo,fechaNace,alumnoActivo) values ('Pepito','Perez','H','2000-01-01',1)
+insert into Cursos(nombrCurso,temario) values ('Matematicas','Números naturales y Números enteros. Operaciones y Propiedades. Fracciones. Números decimales.'
+
+insert into Fichas(idAlumno,idCurso) values (1,1)
+
+SELECT Cursos.id as idCurso, Cursos.nombreCurso as nombreCurso, Cursos.temario as temario 
+from Cursos
+join Fichas on Cursos.id=Fichas.idCurso;
+
+insert into Alumnos(nombreAlumno,apellidoAlumno,sexo,fechaNace,alumnoActivo) values ('Pepito','Perez','H','2000-01-01',1),
+('Juan','Moya','H','2007-02-10',1),
+('Laura','Romero','M','2005-07-05',1),
+('Andrea','Albornoz','M','2006-01-12',1),
+('Felipe','Rodriguez','H','2008-08-01',1)

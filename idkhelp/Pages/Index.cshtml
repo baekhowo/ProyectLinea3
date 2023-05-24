@@ -1,0 +1,29 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<h3>
+    <font face="Verdana">Inicio de sesión</font>
+</h3>
+<form method="POST">
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">Usuario:</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" name="user" value="">
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">Contraseña:</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" name="pass" value="">
+        </div>
+    </div>
+
+    <div class="row mb-3">
+        <div class="offset-sm-3 col-sm-3 d-grid">
+            <button type="submit" class="btn btn-primary">Iniciar sesion</button>
+        </div>
+    </div>
+</form>

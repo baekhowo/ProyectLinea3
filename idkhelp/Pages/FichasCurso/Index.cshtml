@@ -1,0 +1,29 @@
+﻿@page
+@model idkhelp.Pages.clients.IndexFichaCurso
+@{
+}
+
+<br>
+<h2>Ficha de alumnos inscritos al curso: @Model.nombreC</h2>
+<p>Este curso cuenta con el siguiente temario: @Model.temarioC</p>
+<form method="GET"></form>
+    
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID Alumno</th>
+            <th>Nombre Alumno</th>
+            <th>Apellido Alumno</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.listFichaCurso)
+        {
+            <tr>
+                <td>@item.id</td>
+                <td>@item.nombreAlumno</td>
+                <td>@item.apellidoAlumno</td>
+            </tr>
+        }
+    </tbody>
+</table>

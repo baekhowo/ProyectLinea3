@@ -1,0 +1,32 @@
+﻿@page
+@model idkhelp.Pages.clients.IndexModel
+@{
+}
+
+<br>
+<h2>Lista de alumnos</h2>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Estado</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.listAlumno)
+        {
+            <tr>
+                <td>@item.id</td>
+                <td>@item.nombre</td>
+                <td>@item.apellido</td>
+                <td>@item.estado</td>
+                <td>
+                    <a class="btn btn-primary btn-sm" href="/FichasAlumnos/Index?id=@item.id">Ver ficha</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

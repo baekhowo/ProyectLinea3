@@ -1,0 +1,33 @@
+﻿@page
+@model idkhelp.Pages.clients.IndexFichaAlumnos
+@{
+}
+
+<br>
+<h2>Ficha del alumno: @Model.nombreA</h2>
+<form type="GET"></form>
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID Alumno</th>
+            <th>Nombre Alumno</th>
+            <th>Apellido Alumno</th>
+            <th>Sexo</th>
+            <th>Fecha de nacimiento</th>
+            <th>Curso</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.listFichaAlumno)
+        {
+            <tr>
+                <td>@item.id</td>
+                <td>@item.nombreAlumno</td>
+                <td>@item.apellidoAlumno</td>
+                <td>@item.sexo</td>
+                <td>@item.fechaNace</td>
+                <td>@item.nombreCurso</td>
+            </tr>
+        }
+    </tbody>
+</table>

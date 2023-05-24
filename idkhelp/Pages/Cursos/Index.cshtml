@@ -1,0 +1,30 @@
+﻿@page
+@model idkhelp.Pages.clients.IndexCursos
+@{
+}
+
+<br>
+<h2>Lista de cursos</h2>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Nombre</th>
+            <th>Temario</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.listCurso)
+        {
+            <tr>
+                <td>@item.id</td>
+                <td>@item.nombreCurso</td>
+                <td>@item.temario</td>
+                <td>
+                    <a class="btn btn-primary btn-sm" href="/FichasCurso/Index?id=@item.id">Ver ficha</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
